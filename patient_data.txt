@@ -1,1 +1,2 @@
-12 
+5 heart rate blood pressure body temperature breathing status 
+5 heart rate blood pressure body temperature breathing status 

@@ -12,47 +12,10 @@ input: heart rate(hr), blood presure(bp), body temperature(bt), breathing status
 return: the helth monitor will tell you if your healthy by checking if youre in the healthy status ie not too high not too low
 return: if youre input is not in  the health satus then it will tell you that youre not health
 """
-import json
 import numpy as np
+from utils import *
 
 dataPATH = 'params.json'
-
-def take_measurement(min, max, metric):
-  if metric == 'body temperature':
-    measurement = float(input('Enter the ' + metric +'\n'))
-  else:
-    measurement = int(input('Enter the ' + metric +'\n'))
-
-  if (measurement < min) or (measurement > max):
-    status = 'at risk'
-  else:
-    status = 'healthy'
-    
-  print(status)
-  print('__________________________________________________')
-
-  return status
-
-def read_data(file):
-  f = open(file)
-  data = json.load(f)
-  f.close()
-
-  return data
-
-def check_risk(data, id):
-  at_risk = [id]
-
-  print("\nChecking patient " + str(id))
-
-  for measurement in data:
-    health_data = data[measurement]  
-
-    if take_measurement(health_data['min'], health_data['max'], health_data['metric']) == 'at risk':
-      at_risk.append(health_data['metric'])
-
-  return at_risk
-
 
 def main():
   data = read_data(dataPATH)
@@ -91,7 +54,7 @@ def main():
 
     f.close()
 
-  print('Checked patints ID:')
+  print('Checked patients ID:')
   print(ordered_ids)
 
  
