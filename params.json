@@ -1,6 +1,6 @@
 {
-    "heart rate": { "min": 10,"max": 100, "metric": "heart rate"},
-    "blood pressure": { "min": 10,"max": 100, "metric": "blood pressure"},
-    "body temperature": { "min": 10,"max": 100, "metric": "body temperature"},
-    "breathing status": { "min": 10,"max": 100, "metric": "breathing status"}
+    "heart rate": { "min": 60,"max": 100, "metric": "heart rate"},
+    "blood pressure": { "min": 60,"max": 120, "metric": "blood pressure"},
+    "body temperature": { "min": 36.1,"max": 37.2, "metric": "body temperature"},
+    "breathing status": { "min": 12,"max": 20, "metric": "breathing status"}
 }
