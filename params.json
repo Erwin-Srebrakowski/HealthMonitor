@@ -1,0 +1,6 @@
+{
+    "heart rate": { "min": 10,"max": 100, "metric": "heart rate"},
+    "blood pressure": { "min": 10,"max": 100, "metric": "blood pressure"},
+    "body temperature": { "min": 10,"max": 100, "metric": "body temperature"},
+    "breathing status": { "min": 10,"max": 100, "metric": "breathing status"}
+}

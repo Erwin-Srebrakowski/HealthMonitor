@@ -12,6 +12,8 @@ input: heart rate(hr), blood presure(bp), body temperature(bt), breathing status
 return: the helth monitor will tell you if your healthy by checking if youre in the healthy status ie not too high not too low
 return: if youre input is not in  the health satus then it will tell you that youre not health
 """
+import json
+
 def take_measurement(min, max, metric):
 
   if metric == 'body temperature':
@@ -26,21 +28,26 @@ def take_measurement(min, max, metric):
   print('________________________________________________________________________________________________')
 
 
+def read_data(file):
+  
+  f = open(file)
+  data = json.load(f)
 
-
+  return data
 
 def main():
+  dataPATH = 'params.json'
+  data = read_data(dataPATH)
 
   # Heart Rate
-  minhr = 60
-  maxhr = 100
-  take_measurement(minhr, maxhr, 'heart rate')
+  hr_data = data['heart rate']
+  take_measurement(hr_data['min'], hr_data['max'], hr_data['metric'])
 
 
   # Bloot Pressure
   maxbp=120
   minbp=60
-  take_measurement(minbp, maxbp, 'blood presure')
+  take_measurement(minbp, maxbp, 'blood pressure')
 
 
   # Body Temprature
