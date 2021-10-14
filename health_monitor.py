@@ -55,7 +55,7 @@ def main():
   take_measurement(minbs, maxbs, 'breathing status')
 
  
-  
+  # TO DO: file adding
   
 if __name__ == "__main__":
   main()
