@@ -1,6 +1,6 @@
 import json
 
-def take_measurement(min, max, metric):
+def take_measurement(min, max, metric):#error hadling line 3 to 21 (WhileTrueTry)
   
   incorrect_input = True
 
@@ -12,7 +12,7 @@ def take_measurement(min, max, metric):
         measurement = int(input('Enter the ' + metric +'\n'))
       incorrect_input = False
     except ValueError:
-      print('[ERROR] Please enter correct value for {}.'.format(metric))
+      print('[ERROR] Please enter correct value for {}.'.format(metric))#talks to the json file to input the right metric in the sring
       incorrect_input = True
 
   if (measurement < min) or (measurement > max):
