@@ -22,7 +22,7 @@ def main():
 
   nb_patients = int(input('Please specify number of patients: \n'))
   
-  while True:#error hadling line 25 to 35
+  while True:#error hadling line 25 to 35 (WhileTrueTry)
     record_data = input('Would you like to record the data? (y/n)')
 
     if record_data.lower() == 'y':
@@ -38,7 +38,17 @@ def main():
   patient_ids = np.zeros(nb_patients)
 
   for i in range (nb_patients):
-    id = int(input('Please enter patient id: \n'))
+    while True:#error hadling line 41 to 50 (WhileTrueTry)
+      try:
+        id = int(input('Please enter patient id (eg. 1 if inputing only 1 patient, 1 then 2 if inputing 2 patients): \n'))
+      except ValueError:
+        print('[ERROR] Please enter interger for patient id')
+      finally:
+        if id > nb_patients:
+          print('[ERROR] Please enter a number smaller than the total number of patients ')
+        else:
+          break
+    
     patients.append(check_risk(data, id))
     patient_ids[i] = id
 

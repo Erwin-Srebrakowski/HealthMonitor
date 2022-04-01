@@ -1,1 +1,2 @@
-7 body temperature breathing status 
+1 heart rate blood pressure body temperature breathing status 
+2 heart rate blood pressure body temperature breathing status 

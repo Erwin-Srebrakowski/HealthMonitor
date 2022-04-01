@@ -1,12 +1,20 @@
 import json
 
 def take_measurement(min, max, metric):
-  if metric == 'body temperature':
-    measurement = float(input('Enter the ' + metric +'\n'))
-  else:
+  
+  incorrect_input = True
 
-    measurement = int(input('Enter the ' + metric +'\n'))
- 
+  while incorrect_input:
+    try:
+      if metric == 'body temperature':
+        measurement = float(input('Enter the ' + metric +'\n'))
+      else:
+        measurement = int(input('Enter the ' + metric +'\n'))
+      incorrect_input = False
+    except ValueError:
+      print('[ERROR] Please enter correct value for {}.'.format(metric))
+      incorrect_input = True
+
   if (measurement < min) or (measurement > max):
     status = 'at risk'
   else:
